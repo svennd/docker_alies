@@ -5,5 +5,5 @@ git pull
 docker-compose down --volumes
 docker volume prune -f
 
-# build and start all containers
-docker-compose up --build
+# build and start all containers (and demonize)
+docker-compose up --build -d
