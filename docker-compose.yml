@@ -1,10 +1,10 @@
 services:
   alies:
     build:
-      context: ./app
+      context: ./build
       dockerfile: Dockerfile
-    # volumes:
-    #   - ./app:/var/www/html
+    volumes:
+      - ./app:/var/www/html
     environment:
       - PHP_ENV=production
 
