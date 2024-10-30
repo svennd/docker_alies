@@ -1,6 +1,8 @@
 services:
   alies:
-    image: php:8.2-fpm
+    build:
+      context: ./app
+      dockerfile: Dockerfile
     volumes:
       - ./app:/var/www/html
     environment:
