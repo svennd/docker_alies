@@ -1,0 +1,31 @@
+services:
+  alies:
+    image: php:8.2-fpm
+    volumes:
+      - ./app:/var/www/html
+    environment:
+      - PHP_ENV=production
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+      - ./config/nginx.conf:/etc/nginx/nginx.conf
+
+  db:
+    image: mariadb:latest
+    environment:
+      # do change these please ! (randomly generated)
+      # to security folk : this password isn't used anywhere, I think its better then "password"
+      MYSQL_ROOT_PASSWORD: 2jgUdSFWagS7zW2
+      MYSQL_DATABASE: alies
+      MYSQL_USER: alies_user
+      MYSQL_PASSWORD: BO6ZfNW9CK0QGKU
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./config/dump:/docker-entrypoint-initdb.d
+
+volumes:
+  db_data:
