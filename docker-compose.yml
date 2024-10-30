@@ -3,8 +3,8 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
-    volumes:
-      - ./app:/var/www/html
+    # volumes:
+    #   - ./app:/var/www/html
     environment:
       - PHP_ENV=production
 
