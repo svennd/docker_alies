@@ -20,7 +20,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN git clone --depth 1 https://github.com/svennd/alies /var/www/html
 
 # copy config over
-COPY ../config/alies/ /var/www/html/application/config/
+COPY ./config/alies/ /var/www/html/application/config/
 
 # permissions
 RUN chown -R www-data:www-data /var/www/html && \
