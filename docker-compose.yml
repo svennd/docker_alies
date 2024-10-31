@@ -2,10 +2,9 @@ services:
   alies:
     build:
       context: .
-      dockerfile: build/Dockerfile
+      dockerfile: config/build/Dockerfile
     volumes:
-      - ./app:/var/www/html/
-      # - ./config/php.ini:/usr/local/etc/php/php.ini
+      - ./src:/var/www/html/
     expose:
       - "9000"
     container_name: alies
