@@ -14,16 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-install pdo_mysql  gd
 # RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
-# Install Composer globally
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
 WORKDIR /var/www/html
-
-# Install PHP dependencies
-RUN composer update
-
-# Install Node.js dependencies
-RUN npm install
 
 # permissions
 # RUN chown -R www-data:www-data /var/www/html && \
