@@ -7,11 +7,12 @@ RUN apt-get update && apt-get install -y \
     unzip \
     npm \
     nano \
+    libmariadb-dev \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev
 
-RUN docker-php-ext-install pdo_mysql  gd
+RUN docker-php-ext-install mysqli gd
 # RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
 WORKDIR /var/www/html
