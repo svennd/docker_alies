@@ -6,8 +6,8 @@ git clone --depth 1 https://github.com/svennd/alies ./src
 git pull
 
 # stop and remove all containers
-docker-compose down --volumes
+docker compose down --volumes
 docker volume prune -f
 
 # build and start all containers (and demonize)
-docker-compose up --build -d
+docker compose up --build -d
